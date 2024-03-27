@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="SRC/style/style.css">
+    <link rel="icon" href="Assets/favicons/favicon.png" type="image/png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Hello -->
+        <header class="header" id="header">
+            <div class="header-main">
+                <a href="./index.html" class="logo">
+                    <span class="main-icon"></span>
+                    <span>MONAP</span>
+                </a>
+                <div class="header-main-texts">Home</div>
+                <div class="header-main-texts">Donate</div>
+            </div>
+            <div class="header-navbar">
+                <div class="navbar">
+                    <a href="./SRC/pages/homeless.html">Homeless</a>
+                    <a href="SRC/pages/whatwedo.html">What we Do</a>
+                    <a href="SRC/pages/getinvolved.html">Get Involved</a>
+                    <a href="SRC/pages/about.html">About</a>
+                </div>
+
+                <div class="main">
+                    <div class="menu-icon-container" id="menu-icon-js">
+                        <div class="bx bx-menu menu-icon" id="menu-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="about" id="about">
+            <div class="about-content">
+                <div class="column right">
+                    <img src="Assets/main-image.jpg" alt="">
+                </div>
+                <div class="column left">
+                    <div class="text">I'm Riton and I'm a <span id="typed" class="iAm"></span></div>
+                    <p>
+                        A 20-year-old Web Developer with a deep passion for crafting elegant and user-friendly websites.
+                        With a creative mindset and strong technical skills, I specialize in turning web
+                        ideas into visually stunning and functional realities.
+
+                    </p>
+                    <div class="buttons">
+                        <a href="#">Download CV</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-info">
+                asdf
+            </div>
+            <div class="footer-main">
+                <div class="left">
+                    &copy; 2024 • R. Charlox • All Rights Reserved
+                </div>
+                <div class="right">
+                    <div class="social"><a href="https://www.facebook.com/ritoncharlox" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a></div>
+                    <div class="social"><a href="https://www.instagram.com/ritoncharlox" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a></div>
+                    <div class="social"><a href="https://www.linkedin.com/in/ritoncharlox" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a></div>
+                    <div class="social"><a href="https://github.com/ritoncharlox" target="_blank"><i
+                                class="fa-brands fa-github"></i></a></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="nav-touch-close" id="nav-tc-js"></div>
+
+    <script type="text/javascript" src="SRC/script/script.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ['Graphic Designer', 'Video Editor', 'Web Developer'],
+            typeSpeed: 55,
+        });
+    </script>
+
+</body>
+
+</html>
