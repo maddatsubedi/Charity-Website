@@ -4,6 +4,7 @@ let navbar = document.querySelector('.navbar');
 let navtc = document.querySelector('#nav-tc-js');
 
 menu.onclick = () => {
+	// console.log("Hello")
 	menuicon.classList.toggle('bx-x');
 	navbar.classList.toggle('open');
 	navtc.classList.toggle("nav-touch-close-open");
@@ -38,108 +39,54 @@ navtc.onclick = () => {
 // 	prevScrollpos = currentScrollPos;
 // }
 
+let slideIndex = 1;
+showSlides(slideIndex);
 
-const contactSection = document.querySelector('.contact-section');
-const formSection = document.querySelector('.form-section');
-const contactSubmitAfter = document.querySelector('.contact-submit-after');
-const csaOK = document.querySelector('.csa-ok');
-
-
-const contactForm = document.querySelector('.contact-form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-const errorDiv = document.querySelector('.error');
-const emailErrorDiv = document.querySelector('.email-error');
-const contactButton = document.querySelector('.contact-button');
-const contactLoad = document.querySelector('.contact-load');
-const submitText = document.querySelector('.submit-text');
-
-if (csaOK) {
-	csaOK.onclick = () => {
-		contactSubmitAfter.classList.remove('show');
-		formSection.classList.remove('hide');
-		contactSection.classList.remove('csa-cs');
-		contactForm.classList.remove('csa-cf');
-		contactButton.classList.remove('loading');
-		contactLoad.classList.remove('show');
-		submitText.classList.remove('hide');
-		// contactSubmitAfter.classList.add('hide');
-	}
+function nextSlide() {
+  showSlides(slideIndex += 1);
 }
 
-// Function to validate the form
-function validateForm(event) {
-	event.preventDefault(); // Prevent the form from submitting
-	let isValid = true;
-	emailIsValid = true;
-	nameIsValid = true;
-	messageIsValid = true;
-
-	// Check if Name field is empty
-	if (nameInput.value.trim() === '') {
-		isValid = false;
-		nameIsValid = false;
-	}
-
-	// Check if Email field is empty or not a valid email address
-	if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
-		isValid = false;
-		if (emailInput.value.trim() !== '' && !isValidEmail(emailInput.value)) {
-			emailIsValid = false;
-		}
-	}
-
-	// Check if Message field is empty
-	if (messageInput.value.trim() === '') {
-		isValid = false;
-		messageIsValid = false;
-	}
-
-	if (!isValid) {
-		// Display the error message
-		errorDiv.classList.add('error-show');
-		emailErrorDiv.classList.remove('error-show');
-		if (nameIsValid && messageIsValid && !emailIsValid) {
-			errorDiv.classList.remove('error-show');
-			emailErrorDiv.classList.add('error-show');
-		}
-	} else {
-		// Form is valid, it can be sumbitted now
-		emailErrorDiv.classList.remove('error-show');
-		errorDiv.classList.remove('error-show');
-		contactButton.classList.add('loading');
-		contactLoad.classList.add('show');
-		submitText.classList.add('hide');
-		setTimeout(function () {
-			sendMail();
-		}, 2000);
-	}
+function prevSlide() {
+  showSlides(slideIndex -= 1);
 }
 
-// Function to validate email format using a regular expression
-function isValidEmail(email) {
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	return emailRegex.test(email);
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-// Event listener for form submission
-if (contactForm) {
-	contactForm.addEventListener('submit', validateForm);
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
+// Auto slide
+// setInterval(() => {
+//   nextSlide();
+// }, 5000);
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
 function sendMail() {
-
-	// Remove this section after adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
-	// From this
-	contactSubmitAfter.classList.add('show');
-	formSection.classList.add('hide');
-	contactSection.classList.add('csa-cs');
-	contactForm.classList.add('csa-cf');
-	// To this
 
 	// var params = {
 	// 	name: document.getElementById('name').value,
