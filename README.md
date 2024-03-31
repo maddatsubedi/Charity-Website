@@ -10,7 +10,7 @@
 
 You can view the live demo of this portfolio website on Netlify:
 <br>
-Netlify: [Responsive Portfolio Website](https://ritoncharlox-portfolio-website.netlify.app/)
+Netlify: [Responsive Portfolio Website](https://ritoncharlox-charity-website.netlify.app/)
 
 ## Pages
 
