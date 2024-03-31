@@ -40,43 +40,47 @@ navtc.onclick = () => {
 // }
 
 let slideIndex = 1;
-showSlides(slideIndex);
+const slidesLength = document.getElementsByClassName("slide").length;
+const dotsLength = document.getElementsByClassName("dot").length;
+if (slidesLength && dotsLength) {
+	showSlides(slideIndex);
+}
 
 function nextSlide() {
-  showSlides(slideIndex += 1);
+	showSlides(slideIndex += 1);
 }
 
 function prevSlide() {
-  showSlides(slideIndex -= 1);
+	showSlides(slideIndex -= 1);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+	showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-  let i;
-  const slides = document.getElementsByClassName("slide");
-  const dots = document.getElementsByClassName("dot");
+function showSlides() {
+	const slides = document.getElementsByClassName("slide");
+	const dots = document.getElementsByClassName("dot");
 
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
+	if (slideIndex >= slides.length) {
+		slideIndex = 0;
+	}
 
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
+	if (slideIndex < 0) {
+		slideIndex = slides.length - 1;
+	}
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].style.transform = `translateX(-${slideIndex * 100}%)`;
+		slides[i].classList.remove("active");
+	}
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+	for (let i = 0; i < dots.length; i++) {
+		dots[i].classList.remove("active");
+	}
 
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+	slides[slideIndex].classList.add('active');
+	dots[slideIndex].className += " active";
 }
 
 // Auto slide

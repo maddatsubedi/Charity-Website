@@ -17,6 +17,10 @@
 	/* --main-color: hsl(250, 52%, 36%); */
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	min-height: 100vh;
 	background: var(--bg-color);
@@ -180,34 +184,82 @@ main {
 	width: 100%;
 	height: 500px;
 	flex: 0 0 auto;
-	background-size: cover;
-	background-position: center;
+	transition: transform 0.5s ease;
 }
 
-.image-slider-container .slide.one {
-	background-image: url('https://picsum.photos/1000/1000');
+.image-slider-container .slide .image-slide-content {
+	height: fit-content;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 10px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: fit-content;
+	border-radius: 1ch;
+	padding: 10px;
+	margin: auto 50px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	transition: transform 0.5s ease;
+	transform: translateY(200%);
+	transition-delay: 0.2s;
+}
+
+.image-slider-container .slide.active .image-slide-content {
+	transform: translateY(0px);
+}
+
+.image-slider-container .slide .image-slide-content .slide-content {
+	font-size: 1.1rem;
+}
+
+.image-slider-container .slide .image-slide-content .slide-button {
+	background-color: var(--main-color);
+	/* font-size: 1rem; */
+	border: none;
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin-left: auto;
+	color: white;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.image-slider-container .slide .image-slide-content .slide-button:hover {
+	background-color: #4e54c8;
+}
+
+/* .image-slider-container .slide.one {
+	background-image: url('../../Assets/home/homeless\ \(1\).jpg');
 }
 
 .image-slider-container .slide.two {
-	background-image: url('https://picsum.photos/1000/1001');
+	background-image: url('../../Assets/home/homeless\ \(2\).jpg');
 }
 
 .image-slider-container .slide.three {
-	background-image: url('https://picsum.photos/1001/1000');
+	background-image: url('../../Assets/home/homeless\ \(3\).jpg');
 }
 
 .image-slider-container .slide.four {
-	background-image: url('https://picsum.photos/1000/1002');
-}
+	background-image: url('../../Assets/home/homeless\ \(4\).jpg');
+} */
 
-/* .image-slider-container img {
+.image-slider-container img {
 	display: block;
 	width: 100%;
-	height: auto;
-} */
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
 
 .image-slider-container .prev,
 .image-slider-container .next {
+	max-width: 50px;
 	position: absolute;
 	/* top: 50%;
 	transform: translateY(-50%); */
@@ -290,8 +342,68 @@ main {
 	backdrop-filter: blur(4px);
 }
 
+.footer .footer-info-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
 .footer .footer-info {
-	padding: 10px 20px;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.footer .footer-info .footer-info-main {
+	text-align: center;
+}
+
+.footer .footer-info .footer-info-form {
+	/* width: fit-content; */
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/* background-color: gray; */
+}
+
+.footer .footer-info .footer-info-form .footer-subscribe-form {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+	column-gap: 20px;
+	row-gap: 20px;
+	/* background-color: red; */
+}
+
+.footer .footer-info .footer-info-form .footer-subscribe-form input {
+	width: 100%;
+	min-width: 100px;
+	/* flex-grow: 1; */
+	background-color: transparent;
+	padding: 10px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	outline: none;
+}
+
+.footer .footer-info .footer-info-form .footer-subscribe-form button {
+	min-width: 100px;
+	/* width: 100%; */
+	background-color: var(--main-color);
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.footer .footer-info .footer-info-form .footer-subscribe-form button:hover {
+	background-color: #4e54c8;
 }
 
 .footer .footer-main {
@@ -348,6 +460,16 @@ main {
 
 .footer .right .social:hover a {
 	color: var(--main-color);
+}
+
+@media (max-width: 550px) {
+	.footer .footer-info .footer-info-form .footer-subscribe-form {
+		flex-direction: column;
+	}
+
+	.footer .footer-info .footer-info-form .footer-subscribe-form button {
+		width: 100%;
+	}
 }
 
 @media (max-width: 700px) {
@@ -444,4 +566,140 @@ main {
 		right: 10px;
 	}
 
+}
+
+.homeless .main {
+	display: flex;
+	max-width: 1300px;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+	column-gap: 50px;
+}
+
+.homeless .main .left {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	/* background-color: gray; */
+}
+
+.homeless .main .left .left-item {
+	padding: 10px;
+	color: var(--text-color);
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+	transition: 0.25s;
+}
+
+.homeless .main .left .left-item:hover {
+	border: 2px solid var(--main-color);
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.homeless .main .right {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	row-gap: 20px;
+	/* margin-left: auto; */
+}
+
+.homeless .main .right .right-item {
+	width: 200px;
+	/* height: fit-content; */
+	/* width: 100%; */
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.homeless .main .right .right-item img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.homeless .main .right .right-item .texts {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+}
+
+.homeless .main .right .right-item .title {
+	text-align: center;
+	font-size: 1.1rem;
+	/* background-color: lightblue; */
+	font-weight: 600;
+}
+
+.homeless .main .right .right-item .description {
+	font-size: 0.9rem;
+	font-weight: 500;
+	/* background-color: lightcoral; */
+}
+
+.homeless .main .right .right-item a {
+	width: 100%;
+	background-color: var(--main-color);
+	font-size: 1rem;
+	text-align: center;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin-top: auto;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.homeless .main .right .right-item a:hover {
+	background-color: #4e54c8;
+}
+
+.homeless .content {
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	margin: 50px auto 0px auto;
+	/* background-color: gray; */
+}
+
+.homeless .content .title {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px auto;
+	/* background-color: gray; */
+}
+.homeless .content .title .title-text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin: 0 20px;
+}
+.homeless .content .line {
+	width: 100%;
+	height: 4px;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+.homeless .content .description {
+	font-size: 1rem;
+	text-align: justify;
+	/* font-weight: 500; */
+	/* background-color: lightblue; */
 }
