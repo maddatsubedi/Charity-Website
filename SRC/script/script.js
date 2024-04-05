@@ -39,7 +39,7 @@ navtc.onclick = () => {
 // 	prevScrollpos = currentScrollPos;
 // }
 
-let slideIndex = 1;
+let slideIndex = 0;
 const slidesLength = document.getElementsByClassName("slide").length;
 const dotsLength = document.getElementsByClassName("dot").length;
 if (slidesLength && dotsLength) {
@@ -84,9 +84,11 @@ function showSlides() {
 }
 
 // Auto slide
-// setInterval(() => {
-//   nextSlide();
-// }, 5000);
+if (slidesLength && dotsLength) {
+	setInterval(() => {
+		nextSlide();
+	}, 5000);
+}
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 

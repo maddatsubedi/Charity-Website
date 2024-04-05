@@ -5,8 +5,8 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	text-decoration: none;
-	list-style: none;
+	/* text-decoration: none; */
+	/* list-style: none; */
 }
 
 :root {
@@ -67,6 +67,7 @@ header .header-main .logo {
 	flex-direction: row;
 	align-items: center;
 	column-gap: 5px;
+	text-decoration: none;
 }
 
 header .header-main .logo .main-icon {
@@ -120,6 +121,7 @@ header .header-navbar .navbar a {
 	font-size: 1.1rem;
 	font-weight: 500;
 	transition: all .50s ease;
+	text-decoration: none;
 }
 
 header .header-navbar .navbar a:hover {
@@ -185,9 +187,11 @@ main {
 	height: 500px;
 	flex: 0 0 auto;
 	transition: transform 0.5s ease;
+	position: relative;
 }
 
 .image-slider-container .slide .image-slide-content {
+	max-width: 500px;
 	height: fit-content;
 	position: absolute;
 	display: flex;
@@ -198,7 +202,7 @@ main {
 	bottom: 0px;
 	right: 0px;
 	width: fit-content;
-	border-radius: 1ch;
+	border-radius: 10px;
 	padding: 10px;
 	margin: auto 50px;
 	color: white;
@@ -215,16 +219,17 @@ main {
 
 .image-slider-container .slide .image-slide-content .slide-content {
 	font-size: 1.1rem;
+	text-align: justify;
 }
 
 .image-slider-container .slide .image-slide-content .slide-button {
 	background-color: var(--main-color);
-	/* font-size: 1rem; */
+	font-size: 1rem;
+	color: white;
+	padding: 10px;
 	border: none;
 	border-radius: 10px;
-	padding: 5px 10px;
 	margin-left: auto;
-	color: white;
 	cursor: pointer;
 	transition: 0.25s;
 }
@@ -330,6 +335,16 @@ main {
 	background-color: #717171;
 }
 
+@media (max-width: 800px) {
+	.image-slider-container .slide .image-slide-content {
+		top: 0px;
+		bottom: 0px;
+		left: 50px;
+		right: 50px;
+		margin: auto auto;
+	}
+}
+
 
 .footer {
 	margin-top: 50px;
@@ -393,11 +408,12 @@ main {
 .footer .footer-info .footer-info-form .footer-subscribe-form button {
 	min-width: 100px;
 	/* width: 100%; */
-	background-color: var(--main-color);
 	color: white;
+	font-size: 1rem;
 	padding: 10px;
 	border: none;
 	border-radius: 10px;
+	background-color: var(--main-color);
 	cursor: pointer;
 	transition: 0.25s;
 }
@@ -451,6 +467,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
+	text-decoration: none;
 }
 
 .footer .right .social:hover {
@@ -552,11 +569,6 @@ main {
 		transition: all .50s ease;
 	}
 
-	header .header-navbar .navbar a:before,
-	header .header-navbar .navbar a:after {
-		display: none;
-	}
-
 	header .header-navbar .navbar a:hover {
 		color: var(--text-color);
 		transform: translateY(5px);
@@ -593,6 +605,7 @@ main {
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(4px);
 	transition: 0.25s;
+	text-decoration: none;
 }
 
 .homeless .main .left .left-item:hover {
@@ -658,11 +671,12 @@ main {
 	font-size: 1rem;
 	text-align: center;
 	color: white;
-	padding: 5px 10px;
+	padding: 10px;
 	border-radius: 10px;
 	margin-top: auto;
 	cursor: pointer;
 	transition: 0.25s;
+	text-decoration: none;
 }
 
 .homeless .main .right .right-item a:hover {
@@ -670,11 +684,11 @@ main {
 }
 
 .homeless .content {
-	max-width: 1000px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
-	margin: 50px auto 0px auto;
+	row-gap: 25px;
+	margin: 70px auto 0px auto;
 	/* background-color: gray; */
 }
 
@@ -686,20 +700,357 @@ main {
 	margin: 0px auto;
 	/* background-color: gray; */
 }
+
+.homeless .content .content-title {
+	max-width: 1000px;
+	font-size: 1.1rem;
+	font-weight: 500;
+	text-align: center;
+	margin: 0 auto;
+}
+
 .homeless .content .title .title-text {
 	font-size: 1.4rem;
 	font-weight: 500;
 	margin: 0 20px;
 }
+
 .homeless .content .line {
 	width: 100%;
 	height: 4px;
 	border-radius: 20px;
 	background-color: var(--main-color);
 }
-.homeless .content .description {
+
+.homeless .content .description.texts {
 	font-size: 1rem;
 	text-align: justify;
 	/* font-weight: 500; */
 	/* background-color: lightblue; */
+}
+
+.homeless .content .content-image {
+	width: 100%;
+	position: relative;
+}
+
+.homeless .content .content-image .content-image-texts {
+	width: fit-content;
+	height: fit-content;
+	max-width: 500px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	/* left: 0px; */
+	padding: 20px;
+	border-radius: 10px;
+	margin: auto 50px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.homeless .content .content-image .content-image-texts .content-image-title {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.homeless .content .content-image .content-image-texts .content-image-description {
+	font-size: 1rem;
+}
+
+.homeless .content .content-image img {
+	width: 100%;
+	height: 500px;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.homeless .content .content-image .content-image-button {
+	width: fit-content;
+	margin-left: auto;
+}
+
+.homeless .content .content-image .content-image-button button {
+	background-color: var(--main-color);
+	font-size: 1rem;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.homeless .content .content-image .content-image-button button:hover {
+	background-color: #4e54c8;
+}
+
+.homeless .content .description {
+	max-width: 1000px;
+	display: flex;
+	row-gap: 20px;
+	flex-direction: column;
+	margin: 0px auto;
+	/* background-color: red; */
+}
+
+.homeless .content .description .description-item {
+	/* background-color: red; */
+	/* min-height: 400px; */
+	display: flex;
+	flex-direction: row;
+	/* justify-content: center; */
+	/* align-items: center; */
+	column-gap: 20px;
+}
+
+.homeless .content .description .description-item.image-right {
+	flex-direction: row-reverse;
+}
+
+.homeless .content .description .description-item .image {
+	/* height: 400px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: gray; */
+}
+
+.homeless .content .description .description-item .image img {
+	display: block;
+	width: 400px;
+	height: 400px;
+	/* height: 100%; */
+	border: 2px solid var(--main-color);
+	border-radius: 20px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.homeless .content .description .description-item .description-line {
+	min-width: 2.5px;
+	align-self: stretch;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.homeless .content .description .description-item .description-content {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.homeless .content .description .description-item .description-content .description-content-title {
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--main-color);
+}
+
+.homeless .content .description .description-item .description-content .description-content-texts {
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: justify;
+}
+
+.homeless .content .description .description-item .description-content .description-content-texts .listTitle {
+	margin: 10px 0px;
+}
+
+.homeless .content .description .description-item .description-content .description-content-texts ul {
+	list-style-type: disc;
+	margin-block-start: 10px;
+	margin-block-end: 10px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+	unicode-bidi: isolate;
+}
+
+.homeless .content .description .description-item .description-content .description-content-button {
+	/* margin-top: auto; */
+	margin-top: 10px;
+}
+
+.homeless .content .description .description-item .description-content .description-content-button button {
+	background-color: var(--main-color);
+	font-size: 1rem;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.homeless .content .description .description-item .description-content .description-content-button button:hover {
+	background-color: #4e54c8;
+}
+
+.homeless .content.realLifeStories .description {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	row-gap: 20px;
+	/* margin-left: auto; */
+}
+
+.homeless .content.realLifeStories .description .right-item {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.homeless .content.realLifeStories .description .right-item img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.homeless .content.realLifeStories .description .right-item .texts {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+}
+
+.homeless .content.realLifeStories .description .right-item .title {
+	text-align: center;
+	font-size: 1.1rem;
+	/* background-color: lightblue; */
+	font-weight: 600;
+	color: var(--main-color);
+}
+
+.homeless .content.realLifeStories .description .right-item .description {
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.homeless .content.realLifeStories .description .right-item .date {
+	margin-top: auto;
+	font-size: 0.8rem;
+}
+
+main.about {
+	padding-top: 20px;
+}
+
+.about .about-image {
+	width: 100%;
+	position: relative;
+}
+
+.about .about-image .about-image-texts {
+	width: fit-content;
+	height: fit-content;
+	max-width: 500px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	/* left: 0px; */
+	padding: 20px;
+	border-radius: 10px;
+	margin: auto 50px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.about .about-image .about-image-texts .about-image-title {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.about .about-image .about-image-texts .about-image-description {
+	font-size: 1rem;
+}
+
+.about .about-image img {
+	width: 100%;
+	height: 500px;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.about .about-image .about-image-button {
+	width: fit-content;
+	margin-left: auto;
+}
+
+.about .about-image .about-image-button button {
+	background-color: var(--main-color);
+	font-size: 1rem;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.about .about-image .about-image-button button:hover {
+	background-color: #4e54c8;
+}
+
+.about .description {
+	max-width: 1000px;
+	display: flex;
+	flex-direction: row;
+	column-gap: 50px;
+	margin: 70px auto 0px auto;
+	/* background-color: red; */
+}
+
+.about .description .description-item {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	padding: 20px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.about .description .description-item .title {
+	width: fit-content;
+	margin: 0px auto;
+	/* background-color: gray; */
+}
+
+.about .description .description-item .title .title-text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin: 0px 20px;
+}
+
+.about .description .description-item .title .line {
+	height: 2px;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.about .description .description-item .description-content {
+	font-weight: 500;
+	text-align: justify;
 }
