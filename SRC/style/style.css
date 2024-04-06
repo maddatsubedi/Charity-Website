@@ -1015,9 +1015,7 @@ main.about {
 	max-width: 1000px;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 	column-gap: 50px;
-	row-gap: 50px;
 	margin: 70px auto 0px auto;
 	/* background-color: red; */
 }
