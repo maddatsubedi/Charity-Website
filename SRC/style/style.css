@@ -1054,3 +1054,123 @@ main.about {
 	font-weight: 500;
 	text-align: justify;
 }
+
+.about .our-team {
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
+	margin: 70px auto 0px auto;
+}
+
+.about .our-team .title {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px auto;
+	/* background-color: gray; */
+}
+
+.about .our-team .title .title-text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin: 0 20px;
+}
+
+.about .our-team .line {
+	width: 100%;
+	height: 4px;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.about .our-team .teams {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 50px;
+	row-gap: 50px;
+
+}
+
+.about .our-team .teams .team-member {
+	width: 200px;
+	background-color: gray;
+	box-sizing: content-box;
+	padding: 10px;
+
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.about .our-team .teams .team-member img {
+	width: 100%;
+	height: 200px;
+	display: block;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 10px;
+}
+
+.about .our-team .teams .team-member .texts {
+	margin-top: 10px;
+}
+
+.about .our-team .teams .team-member .texts .name {
+	font-size: 1.3rem;
+	font-weight: 500;
+	text-align: center;
+	color: var(--main-color);
+}
+
+.about .our-team .teams .team-member .texts .position {
+	font-weight: 500;
+	text-align: center;
+	/* margin-top: 5px; */
+}
+
+.about .our-team .teams .team-member .links {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	row-gap: 10px;
+	margin-top: 20px;
+}
+
+.about .our-team .teams .team-member .links .social {
+	width: 28px;
+	height: 28px;
+	border: 2px solid var(--text-color);
+	border-radius: 8px;
+	font-size: 1.1rem;
+	/* padding: 5px; */
+	transition: 0.3s;
+}
+
+.about .our-team .teams .team-member .links .social a {
+	color: var(--text-color);
+	transition: 0.3s;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+.about .our-team .teams .team-member .links .social:hover {
+	color: var(--main-color);
+	border: 2px solid var(--main-color);
+}
+
+.about .our-team .teams .team-member .links .social:hover a {
+	color: var(--main-color);
+}
