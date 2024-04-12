@@ -42,10 +42,6 @@ header {
 	flex-direction: column;
 	z-index: 117;
 	transition: all .50s ease;
-	background-color: var(--main-color);
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(4px);
 }
 
 header.scrolled {
@@ -58,8 +54,10 @@ header .header-main {
 	flex-direction: row;
 	justify-content: space-around;
 	column-gap: 20px;
-	border-bottom: 2px solid #ccc;
 	padding: 10px 20px;
+	border-bottom: 2px solid #ccc;
+	background-color: rgba(155, 118, 200, 0.2);
+	backdrop-filter: blur(4px);
 }
 
 header .header-main .logo {
@@ -92,12 +90,16 @@ header .header-main .header-main-texts {
 }
 
 header .header-navbar {
+	width: fit-content;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 10px 20px;
-	border-bottom: 2px solid #ccc;
+	padding: 20px 0px;
+	margin: 0px auto;
 	/* background-color: blue; */
+	/* background-color: rgba(49, 83, 194, 0.2); */
+	/* border-bottom: 2px solid var(--main-color); */
+	/* backdrop-filter: blur(4px); */
 }
 
 header .header-navbar .header-navbar-info {
@@ -122,6 +124,13 @@ header .header-navbar .navbar a {
 	font-weight: 500;
 	transition: all .50s ease;
 	text-decoration: none;
+
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+	padding: 5px 20px;
 }
 
 header .header-navbar .navbar a:hover {
@@ -525,10 +534,11 @@ main {
 
 @media (max-width: 850px) {}
 
-@media (max-width: 580px) {
+@media (max-width: 700px) {
 
 	header .header-main {
 		justify-content: space-between;
+		border-bottom: none;
 	}
 
 	.header .main {
@@ -536,8 +546,13 @@ main {
 	}
 
 	header .header-navbar {
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		padding: 10px 20px;
+		border-radius: 0px;
+		border-bottom: 2px solid #ccc;
+		backdrop-filter: blur(4px);
 	}
 
 	header .header-navbar .header-navbar-info {
@@ -567,6 +582,11 @@ main {
 		margin: 12px 0;
 		padding: 0px 25px;
 		transition: all .50s ease;
+		border: none;
+		border-radius: 0px;
+		box-shadow: none;
+		background: none;
+		backdrop-filter: none;
 	}
 
 	header .header-navbar .navbar a:hover {
@@ -1173,4 +1193,263 @@ main.about {
 
 .about .our-team .teams .team-member .links .social:hover a {
 	color: var(--main-color);
+}
+
+main.whatwedo {
+	padding-top: 20px;
+}
+
+.whatwedo .whatwedo-image {
+	width: 100%;
+	position: relative;
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-texts {
+	width: fit-content;
+	height: fit-content;
+	max-width: 500px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	/* left: 0px; */
+	padding: 20px;
+	border-radius: 10px;
+	margin: auto 50px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-texts .whatwedo-image-title {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-texts .whatwedo-image-description {
+	font-size: 1rem;
+}
+
+.whatwedo .whatwedo-image img {
+	width: 100%;
+	height: 500px;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-button {
+	width: fit-content;
+	margin-left: auto;
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-button button {
+	background-color: var(--main-color);
+	font-size: 1rem;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.whatwedo .whatwedo-image .whatwedo-image-button button:hover {
+	background-color: #4e54c8;
+}
+
+.whatwedo .description.whoweare {
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	margin: 70px auto 0px auto;
+	row-gap: 20px;
+	padding: 20px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.whatwedo .description .title {
+	width: fit-content;
+	margin: 0px auto;
+	/* background-color: gray; */
+}
+
+.whatwedo .description .title .title-text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin: 0px 20px;
+}
+
+.whatwedo .description .title .line {
+	height: 2px;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.whatwedo .description .description-content {
+	font-weight: 500;
+	text-align: justify;
+}
+
+.whatwedo .content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
+	margin: 70px auto 0px auto;
+	/* background-color: gray; */
+}
+
+.whatwedo .content .title {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px auto;
+	/* background-color: gray; */
+}
+
+.whatwedo .content .content-title {
+	max-width: 1000px;
+	font-size: 1.1rem;
+	font-weight: 500;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.whatwedo .content .title .title-text {
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin: 0 20px;
+}
+
+.whatwedo .content .line {
+	width: 100%;
+	height: 2px;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.whatwedo .content .description.texts {
+	font-size: 1rem;
+	text-align: justify;
+	/* font-weight: 500; */
+	/* background-color: lightblue; */
+}
+
+.whatwedo .content .description {
+	max-width: 1000px;
+	display: flex;
+	row-gap: 20px;
+	flex-direction: column;
+	margin: 0px auto;
+}
+
+.whatwedo .content .description .description-item {
+	/* background-color: red; */
+	/* min-height: 400px; */
+	display: flex;
+	flex-direction: row;
+	/* justify-content: center; */
+	/* align-items: center; */
+	column-gap: 20px;
+}
+
+.whatwedo .content .description .description-item.image-right {
+	flex-direction: row-reverse;
+}
+
+.whatwedo .content .description .description-item .image {
+	/* height: 400px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: gray; */
+}
+
+.whatwedo .content .description .description-item .image img {
+	display: block;
+	width: 400px;
+	height: 400px;
+	/* height: 100%; */
+	border: 2px solid var(--main-color);
+	border-radius: 20px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.whatwedo .content .description .description-item .description-line {
+	min-width: 2.5px;
+	align-self: stretch;
+	border-radius: 20px;
+	background-color: var(--main-color);
+}
+
+.whatwedo .content .description .description-item .description-content {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-title {
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--main-color);
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-texts {
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: justify;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-texts .listTitle {
+	margin: 10px 0px;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-texts ul {
+	list-style-type: disc;
+	margin-block-start: 10px;
+	margin-block-end: 10px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+	unicode-bidi: isolate;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-button {
+	/* margin-top: auto; */
+	margin-top: 10px;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-button button {
+	background-color: var(--main-color);
+	font-size: 1rem;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.whatwedo .content .description .description-item .description-content .description-content-button button:hover {
+	background-color: #4e54c8;
+}
+
+.whatwedo .content.ourservices .description .description-main .description-main-title {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+	/* line-height: 1; */
+}
+
+.whatwedo .content.ourservices .description .description-main .description-main-content {
+	font-weight: 500;
 }
