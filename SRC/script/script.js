@@ -18,26 +18,28 @@ navtc.onclick = () => {
 	navtc.classList.remove("nav-LR-TC");
 }
 
-// /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function () {
-// 	var currentScrollPos = window.pageYOffset;
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+	var currentScrollPos = window.pageYOffset;
 
-// 	document.getElementById("header").classList.add('scrolled');
-// 	if (currentScrollPos === 0) {
-// 		// console.log("Hello");
-// 		document.getElementById("header").classList.remove('scrolled');
-// 	}
-// 	if (navtc.classList.contains('nav-touch-close-open')) {
-// 		return;
-// 	}
-// 	if (prevScrollpos > currentScrollPos) {
-// 		document.getElementById("header").style.top = "0";
-// 	} else {
-// 		document.getElementById("header").style.top = "-100px";
-// 	}
-// 	prevScrollpos = currentScrollPos;
-// }
+	document.getElementById("header").classList.add('scrolled');
+	if (currentScrollPos === 0) {
+		// console.log("Hello");
+		document.getElementById("header").classList.remove('scrolled');
+	}
+	if (navtc.classList.contains('nav-touch-close-open')) {
+		return;
+	}
+	if (prevScrollpos > currentScrollPos) {
+		document.getElementById("header").style.top = "0";
+	} else {
+		document.getElementById("header").style.top = "-100px";
+	}
+	prevScrollpos = currentScrollPos;
+}
+
+// For the image slider in home page
 
 let slideIndex = 0;
 const slidesLength = document.getElementsByClassName("slide").length;
@@ -88,36 +90,4 @@ if (slidesLength && dotsLength) {
 	setInterval(() => {
 		nextSlide();
 	}, 5000);
-}
-
-// After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
-
-function sendMail() {
-
-	// var params = {
-	// 	name: document.getElementById('name').value,
-	// 	email: document.getElementById('email').value,
-	// 	message: document.getElementById('message').value
-	// }
-
-	// const serviceID = "service_evf2wim";
-	// const templateID = "template_v085uvl";
-
-	// emailjs.send(serviceID, templateID, params)
-	// 	.then(
-	// 		res => {
-	// 			document.getElementById('name').value = "";
-	// 			document.getElementById('email').value = "";
-	// 			document.getElementById('message').value = "";
-
-	// 			contactSubmitAfter.classList.add('show');
-	// 			formSection.classList.add('hide');
-	// 			contactSection.classList.add('csa-cs');
-	// 			contactForm.classList.add('csa-cf');
-
-	// 		}
-	// 	)
-	// 	.catch((error) => {
-	// 		console.log(error);
-	// 	})
 }
