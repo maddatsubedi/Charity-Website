@@ -1,8 +1,10 @@
+// Selecting DOM elements
 let menu = document.querySelector('#menu-icon-js');
 let menuicon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let navtc = document.querySelector('#nav-tc-js');
 
+// Toggle navbar menu on menu icon click
 menu.onclick = () => {
 	// console.log("Hello")
 	menuicon.classList.toggle('bx-x');
@@ -10,6 +12,7 @@ menu.onclick = () => {
 	navtc.classList.toggle("nav-touch-close-open");
 }
 
+// Close navbar menu on navigation touch close button click
 navtc.onclick = () => {
 	menuicon.classList.toggle('bx-x');
 	navbar.classList.remove('open');
@@ -39,27 +42,32 @@ window.onscroll = function () {
 	prevScrollpos = currentScrollPos;
 }
 
-// For the image slider in home page
-
+// Image slider functionality
 let slideIndex = 0;
 const slidesLength = document.getElementsByClassName("slide").length;
 const dotsLength = document.getElementsByClassName("dot").length;
+
+// Showing slides if elements exist
 if (slidesLength && dotsLength) {
 	showSlides(slideIndex);
 }
 
+// Function to move to next slide
 function nextSlide() {
 	showSlides(slideIndex += 1);
 }
 
+// Function to move to previous slide
 function prevSlide() {
 	showSlides(slideIndex -= 1);
 }
 
+// Function to move to a specific slide
 function currentSlide(n) {
 	showSlides(slideIndex = n);
 }
 
+// Function to show slides
 function showSlides() {
 	const slides = document.getElementsByClassName("slide");
 	const dots = document.getElementsByClassName("dot");
