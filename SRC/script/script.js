@@ -99,3 +99,19 @@ if (slidesLength && dotsLength) {
 		nextSlide();
 	}, 5000);
 }
+
+// Function to close the popup
+function closePopup() {
+	// Get the popup element by its ID
+	var popup = document.getElementById("donatePopup");
+	// Set the display property of the popup to "none" to hide it
+	popup.style.display = "none";
+}
+
+// Function to open the popup
+function openPopup() {
+	// Get the popup element by its ID
+	var popup = document.getElementById("donatePopup");
+	// Set the display property of the popup to "block" to show it
+	popup.style.display = "flex";
+}

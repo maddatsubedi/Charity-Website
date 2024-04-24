@@ -5,10 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
+
+    <!-- Link to the style.css -->
     <link rel="stylesheet" type="text/css" href="../style/style.css">
+
+    <!-- Link to the favicon -->
     <link rel="icon" href="../../Assets/favicons/favicon.png" type="image/png" sizes="32x32">
 
+    <!-- Link to add the Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Link to add the boxicons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
@@ -23,8 +30,8 @@
                     <span class="main-icon"></span>
                     <span>MONAP</span>
                 </a>
-                <div class="header-main-texts">Home</div>
-                <div class="header-main-texts">Donate</div>
+                <a href='../../index.html' class="header-main-texts">Home</a>
+                <div class="header-main-texts" onclick="openPopup()">Donate</div>
             </div>
             <div class="header-navbar">
                 <div class="navbar">
@@ -47,6 +54,14 @@
         </header>
 
         <main class="about" id="about">
+            <!-- Popup Box to appear when donate button is clicked -->
+            <div id="donatePopup" class="donate-popup-wrapper">
+                <div class="donate-popup">
+                    <span class="close-btn" onclick="closePopup()"><i class="fas fa-times"></i></span>
+                    <h2>We are currently working on this</h2>
+                    <p>Your support matters. Please check back later.</p>
+                </div>
+            </div>
             <div class="about-image">
                 <div class="about-image-texts">
                     <div class="about-image-title">

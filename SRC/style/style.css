@@ -1,14 +1,19 @@
+/* Importing Google Font 'Poppins' */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Resetting default styles and setting up global styles */
 * {
 	padding: 0;
+	/* Removing default padding */
 	margin: 0;
+	/* Removing default margin */
 	box-sizing: border-box;
+	/* Ensuring all elements include padding and border in their total width and height */
 	font-family: 'Poppins', sans-serif;
-	/* text-decoration: none; */
-	/* list-style: none; */
+	/* Setting default font to 'Poppins' with fallback to sans-serif */
 }
 
+/* Defining custom CSS variables */
 :root {
 	/* --bg-color: radial-gradient(circle at 60% 50%, rgba(238,174,202,1) 0%, rgb(127, 172, 224) 100%); */
 	--bg-color: radial-gradient(circle at 70% 50%, rgba(238, 174, 202, 1) 0%, rgb(145, 167, 192) 100%);
@@ -17,14 +22,20 @@
 	/* --main-color: hsl(250, 52%, 36%); */
 }
 
+/* Styling for the entire HTML document */
 html {
 	scroll-behavior: smooth;
+	/* Smooth scrolling behavior for the entire document */
 }
 
+/* Styling for the body */
 body {
 	min-height: 100vh;
+	/* Ensuring the body takes up at least the full height of the viewport */
 	background: var(--bg-color);
+	/* Setting background color to the defined gradient */
 	color: var(--text-color);
+	/* Setting text color */
 }
 
 .page {
@@ -87,6 +98,18 @@ header .header-main .header-main-texts {
 	align-items: center;
 	font-size: 1.1rem;
 	font-weight: 600;
+	color: var(--text-color);
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+header .header-main .header-main-texts.active {
+	color: var(--main-color);
+}
+
+header .header-main .header-main-texts:hover {
+	color: var(--main-color);
 }
 
 header .header-navbar {
@@ -134,8 +157,7 @@ header .header-navbar .navbar a:hover {
 	transform: scale(1.1);
 }
 
-.header header .header-navbar .navbar a.active,
-.header .main a.active {
+header .header-navbar .navbar a.active {
 	color: var(--main-color);
 }
 
@@ -172,6 +194,53 @@ main {
 	padding: 0px 20px;
 	margin-top: 115px;
 	padding-top: 50px;
+}
+
+main .donate-popup-wrapper {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	top: 0px;
+	left: 0px;
+	padding: 20px;
+	z-index: 1000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+main .donate-popup-wrapper .donate-popup {
+	max-width: 300px;
+	position: relative;
+	background-color: darkgray;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	text-align: center;
+}
+
+main .donate-popup-wrapper .donate-popup h2 {
+	margin-top: 0;
+}
+
+main .donate-popup-wrapper .donate-popup p {
+	margin-top: 10px;
+}
+
+main .donate-popup-wrapper .donate-popup .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	color: #555;
+	transition: 0.25s;
+}
+
+main .donate-popup-wrapper .donate-popup .close-btn:hover {
+	color: #333;
 }
 
 
@@ -611,6 +680,7 @@ main {
 
 .homeless .main .right {
 	display: flex;
+	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
 	column-gap: 20px;
@@ -890,6 +960,7 @@ main {
 .homeless .content.realLifeStories .description {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	flex-wrap: wrap;
 	column-gap: 20px;
 	row-gap: 20px;
@@ -945,6 +1016,64 @@ main {
 /* main.about {
 	padding-top: 20px;
 } */
+
+@media (max-width: 700px) {
+	.homeless .main {
+		flex-direction: column;
+		row-gap: 50px;
+	}
+
+	.homeless .main .left .left-item {
+		text-align: center;
+	}
+}
+
+@media (max-width: 500px) {
+	.homeless .main .right .right-item {
+		width: 100%;
+	}
+
+	.homeless .content.realLifeStories .description .right-item {
+		width: 100%;
+	}
+}
+
+@media (max-width: 800px) {
+	.homeless .content .description .description-item {
+		flex-direction: column;
+		row-gap: 10px;
+		column-gap: 10px;
+		padding: 20px;
+
+		border: 2px solid #ccc;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(4px);
+	}
+
+	.homeless .content .description .description-item.image-right {
+		flex-direction: column;
+
+	}
+
+	.homeless .content .description .description-item .image img {
+		width: 100%;
+
+		display: block;
+		height: 400px;
+		/* height: 100%; */
+		border: 2px solid var(--main-color);
+		border-radius: 20px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	/* .homeless .content .description .description-item .description-content .description-content-button {
+		width: fit-content;
+		margin: 0px auto;
+	} */
+}
 
 .about .about-image {
 	width: 100%;
@@ -1169,6 +1298,13 @@ main {
 
 .about .our-team .teams .team-member .links .social:hover a {
 	color: var(--main-color);
+}
+
+@media (max-width: 800px) {
+	.about .description {
+		flex-direction: column;
+		row-gap: 50px;
+	}
 }
 
 /* main.whatwedo {
